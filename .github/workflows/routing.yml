@@ -22,6 +22,7 @@ jobs:
         image: mysql
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_PASSWORD: ''
           MYSQL_DATABASE: test
         ports:
           - 3306/tcp
@@ -51,7 +52,7 @@ jobs:
         run: sudo /etc/init.d/mysql start
 
       - name: Create Database
-        run: mysql -h 127.0.0.1 --port 3306 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS test;'
+        run: mysql -h 127.0.0.1 --port 3306 -u root -e 'CREATE DATABASE IF NOT EXISTS test;'
 
       - name: Get Composer Cache Directory
         id: composer-cache
