@@ -1,10 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <small
-                class="block uppercase text-gray-500 tracking-wide font-regular text-xs">{{ $artist->genre }}</small>
-            {{ $artist->name }}
-        </h2>
+        <div class="flex items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <small
+                    class="block uppercase text-gray-500 tracking-wide font-regular text-xs">{{ $artist->genre }}</small>
+                {{ $artist->name }}
+            </h2>
+            @if(Auth::user()->is_admin)
+                <div>
+                    <a href="{{route('admin.artists.edit',$artist)}}"
+                       class="py-2 px-4 rounded bg-yellow-400 text-black">{{__('Edit')}}</a>
+                    <a href="#"
+                       onclick="window._deleteItem('deleteArtist','{{route('admin.artists.destroy',$artist)}}')"
+                       class="py-2 px-4 rounded bg-red-500 text-white">{{__('Destroy')}}</a>
+                </div>
+            @endif
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -21,4 +32,8 @@
             </div>
         </div>
     </div>
+    <form method="post" id="deleteArtist">
+        @csrf
+        @method('DELETE')
+    </form>
 </x-app-layout>
