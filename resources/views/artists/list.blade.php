@@ -6,7 +6,8 @@
             </h2>
             @if(auth()->user()->is_admin)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.artists.create')">{{__('New')}}</x-nav-link>
+                    <a class="py-2 px-4 rounded bg-blue-500 text-white"
+                       href="{{route('admin.artists.create')}}">+&emsp;{{__('New')}}</a>
                 </div>
             @endif
         </div>
@@ -48,9 +49,10 @@
                             @if(auth()->user()->is_admin)
                                 <td class="px-6 py-4 whitespace-nowrap text-right gap-2">
                                     <a href="{{route('admin.artists.edit',$artist)}}"
-                                       class="p-2 rounded bg-yellow-400 text-black">{{__('Edit')}}</a>
-                                    <a href="#" onclick="window._deleteItem('deleteArtist','{{route('admin.artists.destroy',$artist)}}')"
-                                       class="p-2 rounded bg-red-500 text-white">{{__('Destroy')}}</a>
+                                       class="py-2 px-4 rounded bg-yellow-400 text-black">{{__('Edit')}}</a>
+                                    <a href="#"
+                                       onclick="window._deleteItem('deleteArtist','{{route('admin.artists.destroy',$artist)}}')"
+                                       class="py-2 px-4 rounded bg-red-500 text-white">{{__('Destroy')}}</a>
                                 </td>
                             @endif
                         </tr>
