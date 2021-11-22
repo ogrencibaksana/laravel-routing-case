@@ -13,6 +13,7 @@ jobs:
     env:
       DB_DATABASE: test
       DB_USERNAME: root
+      DB_PASSWORD: password
       BROADCAST_DRIVER: log
       CACHE_DRIVER: redis
       QUEUE_CONNECTION: redis
@@ -21,8 +22,8 @@ jobs:
       mysql:
         image: mysql
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_PASSWORD: ''
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_PASSWORD: password
           MYSQL_DATABASE: test
         ports:
           - 3306/tcp
@@ -75,7 +76,7 @@ jobs:
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Generate APP_KEY
-        run: php artisan key:generate
+        run: php artisan key:generate --env=testing
 
       - name: Test with Artisan
-        run: php artisan test --coverage-text
+        run: php artisan test --env=testing
