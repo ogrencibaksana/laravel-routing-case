@@ -10,14 +10,6 @@ jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-    env:
-      DB_DATABASE: test
-      DB_USERNAME: root
-      DB_PASSWORD: password
-      BROADCAST_DRIVER: log
-      CACHE_DRIVER: redis
-      QUEUE_CONNECTION: redis
-      SESSION_DRIVER: redis
     services:
       mysql:
         image: mysql
@@ -74,6 +66,9 @@ jobs:
 
       - name: Generate APP_KEY
         run: php artisan key:generate --env=testing
+
+      - name: Display Testing Environment Variables
+        run: cat .env.testing
 
       - name: Test with Artisan
         run: php artisan test --env=testing
