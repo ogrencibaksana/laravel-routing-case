@@ -21,9 +21,5 @@ class IsAdminMiddleware
             return $next($request);
         }
         return abort(401);
-//        if (!Auth::check() && !Auth::user()->is_admin) {
-//            dd(Auth::user()->is_admin);
-//        }
-
     }
 }
