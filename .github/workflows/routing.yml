@@ -23,7 +23,7 @@ jobs:
         image: mysql
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: false
-          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: test
         ports:
           - 3306/tcp
