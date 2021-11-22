@@ -8,12 +8,6 @@
 <img src="https://img.shields.io/github/issues/ogrencibaksana/laravel-routing-challenge" />
 </p>
 
-[comment]: <> (<p align="center">)
-
-[comment]: <> (<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>)
-
-[comment]: <> (</p>)
-
 ## Laravel Challenge for Routing
 
 This is a demo project where `routes/web.php` is kind of a mess. Individual routes, no grouping, repeating middlewares
