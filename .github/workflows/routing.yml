@@ -50,6 +50,9 @@ jobs:
       - name: Start MySQL Service
         run: sudo /etc/init.d/mysql start
 
+      - name: Create Database
+        run: mysql -h 127.0.0.1 --port 3306 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS test;'
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
