@@ -1,11 +1,11 @@
 <p align="center"><a href="https://ogrencibaksana.com" target="_blank"><img src="https://ogrencibaksana.com/img/logos/logo.svg" width="400" style="background-color:#ffd023; border-radius:1rem;"></a></p>
 
 <p align="center">
-<a href="https://github.com/ogrencibaksana/laravel-routing-challenge/actions">
-    <img src="https://github.com/ogrencibaksana/laravel-routing-challenge/actions/workflows/routing.yml/badge.svg" />
+<a href="https://github.com/ogrencibaksana/laravel-routing-case/actions">
+    <img src="https://github.com/ogrencibaksana/laravel-routing-case/actions/workflows/routing.yml/badge.svg" />
 </a>
-<img src="https://img.shields.io/github/languages/top/ogrencibaksana/laravel-routing-challenge" />
-<img src="https://img.shields.io/github/issues/ogrencibaksana/laravel-routing-challenge" />
+<img src="https://img.shields.io/github/languages/top/ogrencibaksana/laravel-routing-case" />
+<img src="https://img.shields.io/github/issues/ogrencibaksana/laravel-routing-case" />
 </p>
 
 ## Laravel Challenge for Routing
