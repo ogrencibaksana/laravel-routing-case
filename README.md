@@ -28,7 +28,7 @@ If you have any questions, or suggestions for the future challenges, please open
 
 ### Fork and Clone your forked repository to your computer
 
-    git clone https://github.com/<YOUR_USERNAME>/laravel-routing-challenge
+    git clone https://github.com/<YOUR_USERNAME>/laravel-routing-case
 
 ### Prepare the application
 
