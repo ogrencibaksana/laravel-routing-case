@@ -28,9 +28,9 @@ Route::middleware('auth')->group(function () {
         ->group(function () {
             Route::get('/create', [ArtistController::class, 'create'])->name('create');
             Route::post('/', [ArtistController::class, 'store'])->name('store');
-            Route::get('/{artist:id}/edit', [ArtistController::class, 'edit'])->name('edit');
-            Route::patch('/{artist:id}/update', [ArtistController::class, 'update'])->name('update');
-            Route::delete('/{artist:id}/destroy', [ArtistController::class, 'destroy'])->name('destroy');
+            Route::get('/{artist}/edit', [ArtistController::class, 'edit'])->name('edit');
+            Route::patch('/{artist}/update', [ArtistController::class, 'update'])->name('update');
+            Route::delete('/{artist}/destroy', [ArtistController::class, 'destroy'])->name('destroy');
         });
 });
 
