@@ -14,17 +14,13 @@ use App\Http\Controllers\Admin\ArtistController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::view('/', 'welcome');
 
 Route::middleware('auth')->group(function () {
     Route::get('/artists', 'ArtistController@index')->name('artists.index');
     Route::get('/artists/artist/{artist:id}', 'ArtistController@show')->name('artists.show');
+
+    Route::view('/', 'dashboard')->name('dashboard');
 
     Route::middleware('auth.admin')
         ->prefix('admin/artists')
