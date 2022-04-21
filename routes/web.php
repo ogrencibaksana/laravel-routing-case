@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () { 
     Route::get('/dashboard', function () {
         return view('dashboard');
-   })->name('dashboard');
+    })->name('dashboard');
     Route::get('/artists', [ArtistController::class, 'index'])->name('artists.index');
     Route::get('/artists/artist/{artist:id}', [ArtistController::class, 'show'])->name('artists.show');
     Route::get('/admin/artists/create', [ArtistsController::class, 'create'])->name('admin.artists.create');
