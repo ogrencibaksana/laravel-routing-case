@@ -11,7 +11,7 @@ even after your changes.
 
 ## What has been done
 
-1-) Middleware detached individually, merged as a group.
+1-) Middleware detached individually, merged as a group. <br/>
 2-) Fixed launching with "view/welcome.blade.php" instead of opening the dashboard on the login screen.
 3-) "App\Http\Controllers\ArtistController" and "App\Http\Controllers\Admin\ArtistsController" are defined.
 4-) Two ArtistControllers were used. Changed to ArtistsController instead of ArtistController in "Admin".
