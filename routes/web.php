@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/artists', 'ArtistController@index')->name('artists.index');
+    Route::get('/artists/artist/{artist}', 'ArtistController@show')->name('artists.show');
+
+    Route::view('/', 'dashboard')->name('dashboard');
+
+    Route::middleware('auth.admin')
+        ->prefix('admin/artists')
+        ->name('admin.artists.')
+        ->group(function () {
+            Route::get('/create', [ArtistController::class, 'create'])->name('create');
+            Route::post('/', [ArtistController::class, 'store'])->name('store');
+            Route::get('/{artist}/edit', [ArtistController::class, 'edit'])->name('edit');
+            Route::patch('/{artist}/update', [ArtistController::class, 'update'])->name('update');
+            Route::delete('/{artist}/destroy', [ArtistController::class, 'destroy'])->name('destroy');
+        });
 });
-
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/artists', [\App\Http\Controllers\ArtistController::class, 'index'])->middleware('auth')->name('artists.index');
-Route::get('/artists/artist/{artist:id}', [\App\Http\Controllers\ArtistController::class, 'show'])->middleware('auth')->name('artists.show');
-
-
-Route::get('/admin/artists/create', [\App\Http\Controllers\Admin\ArtistController::class, 'create'])->middleware(['auth', 'auth.admin'])->name('admin.artists.create');
-Route::post('/admin/artists', [\App\Http\Controllers\Admin\ArtistController::class, 'store'])->middleware(['auth', 'auth.admin'])->name('admin.artists.store');
-Route::get('/admin/artists/{artist:id}/edit', [\App\Http\Controllers\Admin\ArtistController::class, 'edit'])->middleware(['auth', 'auth.admin'])->name('admin.artists.edit');
-Route::patch('/admin/artists/{artist:id}/update', [\App\Http\Controllers\Admin\ArtistController::class, 'update'])->middleware(['auth', 'auth.admin'])->name('admin.artists.update');
-Route::delete('/admin/artists/{artist:id}/destroy', [\App\Http\Controllers\Admin\ArtistController::class, 'destroy'])->middleware(['auth', 'auth.admin'])->name('admin.artists.destroy');
-
 
 require __DIR__ . '/auth.php';
