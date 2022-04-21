@@ -21,8 +21,8 @@ Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/artists', [\App\Http\Controllers\ArtistController::class, 'index'])->middleware('auth')->name('artists.index');
-Route::get('/artists/artist/{artist:id}', [\App\Http\Controllers\ArtistController::class, 'show'])->middleware('auth')->name('artists.show');
+Route::get('/artists', 'ArtistController@index')->middleware('auth')->name('artists.index');
+Route::get('/artists/artist/{artist:id}', 'ArtistController@ show')->middleware('auth')->name('artists.show');
 
 
 Route::get('/admin/artists/create', [\App\Http\Controllers\Admin\ArtistController::class, 'create'])->middleware(['auth', 'auth.admin'])->name('admin.artists.create');
