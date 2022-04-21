@@ -35,7 +35,7 @@ even after your changes.
     npm install && npm run dev
     php artisan serve
     
-    <hr/>
+  <hr/>
 
 ## License
 
