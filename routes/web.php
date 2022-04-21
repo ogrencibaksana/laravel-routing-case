@@ -18,7 +18,7 @@ Route::view('/', 'welcome');
 
 Route::middleware('auth')->group(function () {
     Route::get('/artists', 'ArtistController@index')->name('artists.index');
-    Route::get('/artists/artist/{artist:id}', 'ArtistController@show')->name('artists.show');
+    Route::get('/artists/artist/{artist}', 'ArtistController@show')->name('artists.show');
 
     Route::view('/', 'dashboard')->name('dashboard');
 
