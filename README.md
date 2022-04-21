@@ -19,10 +19,13 @@ even after your changes.
 4-) Two ArtistControllers were used. Changed to ArtistsController instead of ArtistController in "Admin".<br/>
 5-) Requests have been tested. All of them are doing the right thing.
 
+<hr/>
 
 ### Fork and Clone
 
     git clone https://github.com/Mahmutcano/laravel-routing-case
+
+<hr/>
 
 ### Prepare the application
 
@@ -31,6 +34,8 @@ even after your changes.
     php artisan key:generate
     npm install && npm run dev
     php artisan serve
+    
+    <hr/>
 
 ## License
 
