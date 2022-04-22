@@ -30,11 +30,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 //admin routes
 Route::group(['middleware'=> ['auth','auth.admin'], 'prefix' => 'admin'], function() {
-    Route::get('artists/create', [ArtistsController::class, 'create'])->name('admin.artists.create');
-    Route::post('artists', [ArtistsController::class, 'store'])->name('admin.artists.store');
-    Route::get('artists/{artist:id}/edit', [ArtistsController::class, 'edit'])->name('admin.artists.edit');
-    Route::patch('artists/{artist:id}/update', [ArtistsController::class, 'update'])->name('admin.artists.update');
-    Route::delete('artists/{artist:id}/destroy', [ArtistsController::class, 'destroy'])->name('admin.artists.destroy');
+    Route::get('/artists/create', [ArtistsController::class, 'create'])->name('admin.artists.create');
+    Route::post('/artists', [ArtistsController::class, 'store'])->name('admin.artists.store');
+    Route::get('/artists/{artist:id}/edit', [ArtistsController::class, 'edit'])->name('admin.artists.edit');
+    Route::patch('/artists/{artist:id}/update', [ArtistsController::class, 'update'])->name('admin.artists.update');
+    Route::delete('/artists/{artist:id}/destroy', [ArtistsController::class, 'destroy'])->name('admin.artists.destroy');
 });
 
 require __DIR__ . '/auth.php';
