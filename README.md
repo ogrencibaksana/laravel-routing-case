@@ -28,7 +28,8 @@ If you have any questions, or suggestions for the future challenges, please open
 
 ### Fork and Clone 
 
-    git clone https://github.com/akardev/laravel-routing-case
+    git clone https://github.com/akardev/laravel-routing-case.git
+               
 
 
 ### Prepare the application
