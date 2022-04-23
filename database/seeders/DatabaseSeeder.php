@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
         Artist::factory(50)->create()->each(function ($artist) {
             $artist->art()->saveMany(Art::factory(rand(1, 75))->create(['artist_id' => $artist->id]));
         });

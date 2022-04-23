@@ -26,9 +26,11 @@ We will NOT merge the Pull Request, only review on it, whether it's correct or n
 
 If you have any questions, or suggestions for the future challenges, please open an Issue on this repo.
 
-### Fork and Clone your forked repository to your computer
+### Fork and Clone 
 
-    git clone https://github.com/<YOUR_USERNAME>/laravel-routing-case
+    git clone https://github.com/akardev/laravel-routing-case.git
+               
+
 
 ### Prepare the application
 
