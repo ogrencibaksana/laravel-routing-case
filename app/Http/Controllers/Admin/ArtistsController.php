@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redirect;
 
-class ArtistController extends Controller
+class ArtistsController extends Controller
 {
 
     /**
