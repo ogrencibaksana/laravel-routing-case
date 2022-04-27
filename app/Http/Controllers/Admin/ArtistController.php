@@ -37,7 +37,6 @@ class ArtistController extends Controller
     public function store(StoreArtistRequest $request): RedirectResponse
     {
         $artist = Artist::create($request->validated());
-
         return Redirect::route('artists.show', $artist);
     }
 
@@ -76,6 +75,17 @@ class ArtistController extends Controller
     {
         $artist->delete();
         return Redirect::route('artists.index');
+    }
 
+    public function show(Artist $artist)
+    {
+        $artist->load('art');
+        return view('artists.view', compact('artist'));
+    }
+
+    public function index()
+    {
+        $artists = Artist::withCount('art')->paginate();
+        return view('artists.list', compact('artists'));
     }
 }
